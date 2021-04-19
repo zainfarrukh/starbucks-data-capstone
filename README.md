@@ -2,7 +2,9 @@
 
 ## Project Description
 
-Supervised Machine Learning to predict amount to be spent in Starbucks by the customer, their average reward on offers and percentage of offers completed by each user so that decision makers can identify users on whom the offer works and can focus their efforts on those users
+Supervised Machine Learning to predict amount to be spent in Starbucks by the customer, their average reward on offers and percentage of offers completed by each user so that decision makers can identify users on whom the offer works and can focus their efforts on those users.
+
+Also using Supervised Machine Learning to classify users based on type of spenders ("high", "medium" or "low") and making offers based on that classification
 
 ## Data Introduction
 
