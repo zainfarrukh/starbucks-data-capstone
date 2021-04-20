@@ -1,10 +1,21 @@
 # Starbucks Capstone Project for Data Scientist Nano Degree
 
+## Business Case
+Based on User data, Offer data and data related to user's interaction with offers, I will try to predict user behaviour. More specifically, I will try to predict how will users respond to the offers received by them.
+
 ## Project Description
 
 Supervised Machine Learning to predict amount to be spent in Starbucks by the customer, their average reward on offers and percentage of offers completed by each user so that decision makers can identify users on whom the offer works and can focus their efforts on those users.
 
 Also using Supervised Machine Learning to classify users based on type of spenders ("high", "medium" or "low") and making offers based on that classification
+
+### Evaluation matrices for ML models
+#### For Regression
+As data would be most likely to be non-linear, I will use Support Vector Machines and appropriate evaluation matrix would be good-of-fit R2 "R-squared".  
+
+#### For Classification
+I will use either use Random Forrest Classifier or Support Vector Classifier and appropriate evaluation matrix would be accurcy score. I would also see precision, recall and F2 score to check for overfitting
+
 
 ## Data Introduction
 
@@ -60,8 +71,15 @@ value - (dict of strings) - either an offer id or transaction amount depending o
 
 ## Summary of the project
 #### Cleaning the Data
+I have cleaned the data to adjust for NaN values and outliers.
+
 #### Data Visualization
+I will use data visualization techniques to try to find patterns in the data to use for in feature selection.
+
 #### Combining the Data
+Data is located in 3 JSON files and I will merge the data to be used in my analysis and creation of features.
+
 #### Extracting and Scaling the features
+
 #### Making Predictions
-#### Evaluating the Model
+#### Evaluating the Models
