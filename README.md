@@ -1,7 +1,7 @@
 # Starbucks Capstone Project for Data Scientist Nano Degree
 
 ## Business Case
-Based on User data, Offer data and data related to user's interaction with offers, I will try to predict user behaviour. More specifically, I will try to predict how will users respond to the offers received by them.
+Based on User data, Offer data and data related to user's interaction with offers, I will try to predict user behaviour. More specifically, I will try to predict how well users respond to the offers received by them.
 
 ## Project Description
 
@@ -77,16 +77,16 @@ I have cleaned the data to adjust for NaN values and outliers. Some of users' ag
 I have created three additional columns for data:
 1) Average reward for each user from offers availed so far
 2) Percentage completion of offers for each user (offers completed / offers received)
-3) Whether user is high spender or low (anyone who spend 5% or more of his income on starbucks will be classified as high spender)
-
-#### Data Visualization
-I used data visualization techniques to try to find insights in the data to use for in feature selection. Also I checked for any anomolies.
+3) Whether user is a high spender or low (anyone who spends 5% or more of his income on starbucks will be classified as high spender)
 
 #### Combining the Data
 Data is located in 3 JSON files and I merged the data to be used in my analysis and creation of features.
 
+#### Data Visualization
+I used data visualization techniques to try to find insights in the data to use for in feature selection. Also I checked for any anomolies.
+
 #### Extracting and Scaling the features
-Relevant features where extracted and I used standard scaler to scale the features around their mean and standard deviation.
+Relevant features where extracted and I used standard scaler to scale the features around their mean and standard deviation. Dummy variables were created to handle categorical data
 
 #### Making Predictions
 I used Support Vector Machines regression to check whether variables like total amount spent, average reward earned for coupons and percentage completion of offer (offer completed / offer received)
