@@ -7,9 +7,9 @@ Based on User data, Offer data and data related to user's interaction with offer
 
 First I will study the data using various visualization techniques and then I will use:
 
-1) Supervised Machine Learning to predict amount to be spent in Starbucks by the customer, their average reward on offers and percentage of offers completed by each user so that decision makers can identify users on whom the offer works and can focus their efforts on those users.
+1) Supervised Machine Learning to try to predict the amount to be spent in Starbucks by the customer so that decision-makers can identify users on whom the offer works and can focus their efforts on those users.
 
-2) Supervised Machine Learning to classify users based on type of spenders ("high", "medium" or "low") and making offers based on that classification
+2) Supervised Machine Learning to classify users based on the type of spenders ("high", "medium" or "low") and making offers based on that classification.
 
 ### Evaluation matrices for ML models
 #### For Regression
@@ -89,32 +89,32 @@ I used data visualization techniques to try to find insights in the data to use 
 Relevant features where extracted and I used standard scaler to scale the features around their mean and standard deviation. Dummy variables were created to handle categorical data
 
 #### Making Predictions
-I used Support Vector Machines regression to check whether variables like total amount spent, average reward earned for coupons and percentage completion of offer (offer completed / offer received)
+I used Support Vector Machines regression to predict total amount spent.
 
 I used Random Forrest Classifier and Support Vector Classifier to predict whether user would be high spender or low spender.
 
 #### Evaluating the Models
-I used R2 to evaluate regression models. The results were not that great and models were only able to predict 0%-33% of the total variance.
-I used Accuracy score to compare between different models and checked precision and recall of final model to evaluate the performance 
+I used R2 to evaluate regression models. The results were not that great and models were only able to predict 22% of the total variance.
+
+I used Accuracy score to compare between different models and checked precision and recall of final model to evaluate the performance. Major issue I faced was that classes were imbalanced and I had to resample the data in such a way that I had to undersample low and medium spenders so that each classifier is equally represented in the data to be fed into classifiers.
 
 ## Conclusion
 ML regression model gives us key insights on likely purchase behaviour of the users as well. However, current features do not provide predictions which we can accurately rely on and we need to experiment with additional features to predict the actual amount of spend for each user.
 
 Current data can be used to classify each user based on their spend behaviour and we can use that classification to target each user with respect to number of offers and type of offers to be offered.
 
-We were able to get 81% accuracy using SVM classifier to predict whether user was a high spender or low spender. Although model has a very low recall for high spenders but good precision. So that means our model is very picky in selecting the high spenders. Which works for our business case as whenever model categorize a high spender, it would have a very high probability of being a true label.
+We were able to get 75% accuracy using SVM classifier to predict whether user was a high spender or low spender. Although model has a good accuracy score but model had very poor results for high spenders (indeterminate F1-score). Model could not even predict a single high spender. It was because labels were very imbalanced.
+
+One of the way we can counter this class imbalance is to undersample data from classes with higher frequencies. I have selected random samples from low and medium spenders so that total number of sample from each class is same and trained my models on those data and predicted the whole dataset from that trained model. Although my accuracy score reduced to 60.24%-61.26% but I got much better F1-scores in high spender class.
 
 Based on on this information we can decide to which user we should offer the coupon offers. Coupon offers should be function of type of spender each user is i.e. users with high spend behaviour should get more coupon offers as they are more likely to make a purchase as well as relative difficulty of each coupon i.e. high spenders should be given coupon with greater difficulty.
 
 ## Next Steps
 There is still much left to do to extract insights on user behaviour. We could do following additional activities to get more insights on the data:
-
-1) Additional Features to improve accuracy of regression models.
-
-2) Test relationships between each type of offer and various classes of users.
-
-3) Identify suitable clusterrings of users
-
-4) Use Grid Search to check whether there are any better models
-
-5) Identify reason for anamolies in the data i.e. why people have more than 110 years age
+1) Identify reason for anamolies in the data i.e. why people have more than 110 years age
+2) Additional Features to improve accuracy of regression models
+3) Get more samples so that we have sufficient set of high spenders
+4) Test relationships between each type of offer and various classes of users.
+5) Identify suitable clusterrings of users
+6) Use Grid Search to check whether there is any better models with better hyper parameters
+7) Use more granular search to find additional models which fit better on our data
